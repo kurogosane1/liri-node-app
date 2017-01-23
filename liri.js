@@ -22,10 +22,10 @@ var fs = require("fs");
 var secretWord = input[2];
 
 var spotify = require('spotify');
-
+runSwitch();
 
 //Now it would then compare it with the random.txt and pass the function to perform the appropriate function accordingly//
-
+function runSwitch(){
 switch (secretWord) {
     case "my-tweets":
         tweets();
@@ -43,6 +43,7 @@ switch (secretWord) {
         doing();
         break;
 
+}
 }
 
 //************This is where the twitter functions would be used */////////////////////////
@@ -188,13 +189,14 @@ function doing(){
         console.log(randomNo);
         secretWord = dataArr[randomNo];
         console.log(secretWord);
-        if (secretWord=='spotify-this-song')
-        {
-            spot();
-        }
-        else{
-            movies();
-        }
+        runSwitch(secretWord);
+        // if (secretWord=='spotify-this-song')
+        // {
+        //     spot();
+        // }
+        // else{
+        //     movies();
+        // }
         // We will then re-display the content as an array for later use.
         
         
